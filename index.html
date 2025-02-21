@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Palabras - Carrusel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Pantallas del juego (igual que antes) -->
+        <div class="welcome-screen screen">
+            <h1>¡Juego de Palabras!</h1>
+            <p>¿Cuántos jugadores van a participar?</p>
+            <button onclick="setPlayers(2)">2 Jugadores</button>
+            <button onclick="setPlayers(3)">3 Jugadores</button>
+            <button onclick="setPlayers(4)">4 Jugadores</button>
+        </div>
+
+        <div class="players-setup screen">
+            <h2>Ingresa los nombres de los jugadores</h2>
+            <div id="player-inputs"></div>
+            <button onclick="startGame()">¡Comenzar!</button>
+        </div>
+
+        <div class="letter-selection screen">
+            <div class="current-player"></div>
+            <div class="carousel-container">
+                <div class="selector-marker"></div>
+                <div class="letter-indicator">↓</div>
+                <div class="carousel-viewport"></div>
+            </div>
+            <div class="selected-letter-display"></div>
+            <button class="spin-button" onclick="spinCarousel()">¡Girar Carrusel!</button>
+            <button class="start-button" onclick="startPlayerTurn()" style="display: none;">¡Comenzar Turno!</button>
+        </div>
+
+        <div class="game-screen screen">
+            <div class="current-player"></div>
+            <div class="selected-letter-display"></div>
+            <div class="timer"></div>
+            <input type="text" id="word-input" placeholder="Escribe una palabra..." onkeypress="handleKeyPress(event)">
+            <div class="word-list"></div>
+        </div>
+
+        <div class="results-screen screen">
+            <h2>¡Juego Terminado!</h2>
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Letra</th>
+                        <th>Palabras</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button onclick="resetGame()">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="app.js">
+    </script>
+</body>
+</html>
