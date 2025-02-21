@@ -263,3 +263,107 @@ tr:hover {
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
+
+/* Estilos para powerups */
+.powerup-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #FFD700, #FFA500);
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 1.5em;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.5s ease-out;
+    z-index: 1000;
+}
+
+/* Estilos para logros */
+.achievement-animation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    animation: slideInRight 0.5s ease-out;
+    z-index: 1000;
+}
+
+/* Estilos para puntos */
+.word-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.points {
+    color: #FFD700;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Animaciones nuevas */
+@keyframes popIn {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Estilos para modo historia */
+.level-indicator {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 215, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    color: #FFD700;
+}
+
+/* Estilos para modo batalla */
+.battle-screen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Estilos para categorías */
+.category-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para powerups activos */
+.active-powerups {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.powerup-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
